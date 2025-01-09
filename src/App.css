@@ -1,0 +1,455 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex; /* Use flexbox for alignment */
+  gap: 20px; /* Space between links */
+  background-color: rgba(244, 236, 236, 0.8); /* Semi-transparent background */
+  padding: 15px 30px; /* Increased padding for better spacing */
+  position: absolute; /* Absolute positioning to place it at the top */
+  top: 20px; /* Vertical position from the top */
+  right: 20px; /* Position from the right */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 3; /* Ensure it’s above other elements */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar a {
+  color: rgb(176, 113, 227); /* White text color */
+  text-decoration: none; /* No underline */
+  font-size: 18px; /* Font size for links */
+  padding: 10px 15px; /* Padding for better clickable area */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.navbar a:hover {
+  background-color: rgb(244, 175, 206); /* Lighter background on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Team Section in About Page */
+
+
+/* Main Container */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Team Section */
+.team {
+  display: flex;
+  flex-direction: row; /* Align items horizontally */
+  gap: 30px; /* Increased gap for horizontal spacing */
+  padding: 20px;
+  align-items: center;
+}
+
+/* Team Member */
+.team-member {
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(245, 120, 178, 0.773);
+}
+
+.team-member:hover {
+  transform: scale(1.1) translateY(-10px); /* Pop out upwards on hover */
+  box-shadow: 0px 10px 20px rgba(243, 155, 212, 0.2);
+}
+
+/* Team Member Image */
+.team-member img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: popIn 0.8s ease both;
+}
+
+/* Pop out effect */
+.team-member:hover img {
+  transform: scale(1.1); /* Enlarges slightly on hover */
+  box-shadow: 0px 8px 20px rgba(240, 125, 196, 0.825);
+}
+
+/* Animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Title and Text Styling */
+.team-member h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #eb458d;
+  font-style:oblique;
+}
+
+.team-member p {
+  font-size: 0.9em;
+  color: #e80d77e0;
+  font-family:Raleway,sans serif;
+  font-size: 1em;
+}
+
+
+/* Main Container */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Route-specific Backgrounds */
+.home-background {
+  background-image: url('./assets/home.gif'); /* Replace with actual path for Home GIF */
+}
+
+.prediction-background {
+  background-image: url('./assets/prediction.gif'); /* Replace with actual path for Prediction GIF */
+}
+
+.about-background {
+  background-image: url('./assets/about.jpg'); /* Replace with actual path for About Background */
+}
+
+/* Background GIF */
+
+.background-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5; /* Adjust opacity for visibility */
+  z-index: 0; /* Ensure GIF is in the background */
+}
+
+/* Card Structure for Prediction Section */
+.main-card {
+  position: relative; /* Keeps the card above the GIF */
+  z-index: 2; /* Higher z-index to ensure clickability */
+  background-color: rgba(255, 255, 255, 0.8); /* Card background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Header Style */
+.header {
+  z-index: 1;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Title Styling */
+.title {
+  font-size: 3.0rem; /* Adjust size as needed */
+  
+  font-family: 'Kalnia Glaze', sans-serif;
+  font-size: 2.5em; /* Adjust the size as needed */
+  color: #333; /* Adjust color if necessary */
+  text-align: top; /* Center align the title */
+  margin: 20px 0; /* Margin for spacing above and below the title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow for depth */
+  position: absolute; /* Position it absolutely within the prediction page */
+  top: 40px; /* Adjust this value to control the vertical position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment */
+  z-index: 2; /* Ensure title is above background */
+  
+}
+
+/* Content within Card */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: rgb(241, 49, 49); /* Adjust text color */
+}
+
+/* Upload Form and Button */
+.upload-form {
+  margin-bottom: 10px;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: Raleway,sans-serif;
+}
+
+.upload-button:disabled {
+  background-color: #c31414; /* Disabled button color */
+  cursor: not-allowed;
+}
+
+/* Prediction Output Section */
+.output {
+  margin-top: 20px;
+  text-align: center; /* Center text */
+}
+
+.prediction,
+.confidence {
+  font-size: 1.2rem; /* Font size for results */
+  color: rgb(241, 96, 217); /* Text color */
+  
+  font-family: Raleway,sans-serif;
+}
+
+/* Fade Animations */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Keyframes for Fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.prediction-page {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: flex-end; /* Start from the top */
+  height: 50vh; /* Full viewport height */
+  position: relative; /* Position relative for absolute children */
+  background-color: rgba(255, 255, 255, 0.5); /* Optional background color */
+}
+/* Home Page Styles */
+/* Home.css */
+/* Home.css */
+/* Home.css */
+
+body {
+  margin: 0; /* Remove default body margins */
+  padding: 0; /* Ensure no padding */
+  height: 100vh; /* Full height for body */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start; /* Start from the top */
+  padding-top: 20px; /* Add padding to the top for breathing room */
+}
+
+.home-title {
+  text-align: center; /* Center align the text */
+  overflow: hidden; /* Prevent overflow */
+  margin: 20px 0; /* Add margin for spacing */
+  font-size: 4rem; /* Increase font size for title */
+  font-weight: bold; /* Make title bold */
+  font-family:fantasy; /* Use a custom font */
+  letter-spacing: 2px; /* Add space between letters */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+  color: #ffffff; /* Change text color to white for contrast */
+}
+
+
+/* Title Letter Animation */
+.title-word {
+  display: inline; /* Allows words to be inline */
+  
+  
+  text-align: start;
+}
+
+.title-letter {
+  display: inline-block; /* Allows individual letter animations */
+  opacity: 0; /* Start hidden */
+  transform: translateY(-20px); /* Start slightly above */
+  animation: slideIn 0.6s forwards; /* Animation applied to each title letter */
+}
+
+/* Paragraph styling */
+.home-container {
+  position: relative; /* Allow positioning for the overlay */
+  z-index: 1; /* Ensure content appears above the GIF */
+}
+
+.home-paragraph {
+  position: relative; /* Relative positioning for the container */
+  background-color: rgba(255, 255, 255, 0.1); /* White background with transparency */
+  padding: 20px; /* Add some padding for space */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for 3D effect */
+  backdrop-filter: blur(10px); /* Blur effect for the background */
+  margin: 20px 0; /* Add margin for spacing */
+  max-width: 800px; /* Limit width for better readability */
+  text-align: center; /* Center the text */
+  overflow: hidden; /* Prevent overflow */
+  
+ 
+  font-size: large;
+}
+
+
+/* Paragraph Word */
+.paragraph-word {
+  display: inline; /* Allows words to be inline */
+}
+
+.paragraph-letter {
+  display: inline-block; /* Allows individual letter animations */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.3s forwards; /* Quick fade-in animation */
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  to {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide to original position */
+  }
+}
+
+/* Fade in animation for paragraph letters */
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Fade in */
+  }
+}
+/* About Section */
+.about {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Animated Title */
+.animated-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff6347; /* Initial color */
+  animation: colorChange 3s infinite, fadeIn 1.5s ease;
+  margin-bottom: 30px;
+}
+
+/* Color change animation */
+@keyframes colorChange {
+  0% {
+    color: #ede9eb;
+  }
+  25% {
+    color: #fd00879b;
+  }
+  50% {
+    color: #4b0082;
+  }
+  75% {
+    color:  #a234e1d0;
+  }
+  100% {
+    color: #e134aab3;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Kalnia Glaze Font */
+@font-face {
+  font-family: 'Kalnia Glaze';
+  src: url('./fonts/KalniaGlaze.ttf') format('truetype');
+       
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Rubik Dirt Font */
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway.ttf') format('truetype');
+       
+  font-weight: normal;
+  font-style: normal;
+}
+.home-title {
+  font-family: 'Kalnia Glaze', sans-serif !important; /* Fallback to a sans-serif font */
+  font-size: 3.5em; /* Adjust the size as needed */
+  font-weight: bold; /* Optional */
+  color: #333; /* Set a color that contrasts well */
+}
+
+.home-paragraph {
+  font-family: 'Raleway', sans-serif !important; /* Fallback to a sans-serif font */
+  font-size: 1em; /* Adjust size as needed */
+  color: #555; /* Set a color for better readability */
+}
